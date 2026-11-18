@@ -60,6 +60,12 @@ jobs:
         run: |
           echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
           echo "owner=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"
+      - name: Point the chart's default image at this registry
+        # Keeps the published chart pulling from the org that published it, even if the
+        # repository moves to another owner.
+        run: |
+          sed -i 's#^  repository: ghcr.io/.*/cloudflare-operator$#  repository: ghcr.io/${{ steps.vars.outputs.owner }}/cloudflare-operator#' "$CHART/values.yaml"
+          grep -q "repository: ghcr.io/${{ steps.vars.outputs.owner }}/cloudflare-operator" "$CHART/values.yaml"
       - name: Lint
         run: helm lint "$CHART"
       - name: Package

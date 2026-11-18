@@ -69,17 +69,17 @@ curl -s https://api.cloudflare.com/client/v4/user/tokens/verify \
 ## 3. Install the operator
 
 The chart and the image are published to the GitHub Container Registry on every release
-(`ghcr.io/miho-labs/charts/cloudflare-operator` and `ghcr.io/miho-labs/cloudflare-operator`). Both
+(`ghcr.io/home-labs-pl/charts/cloudflare-operator` and `ghcr.io/home-labs-pl/cloudflare-operator`). Both
 are public; no registry login is needed.
 
 ```bash
 helm upgrade --install cloudflare-operator \
-  oci://ghcr.io/miho-labs/charts/cloudflare-operator --version 0.1.0 \
+  oci://ghcr.io/home-labs-pl/charts/cloudflare-operator --version 0.4.1 \
   --namespace cloudflare-operator --create-namespace
 kubectl -n cloudflare-operator rollout status deploy/cloudflare-operator
 ```
 
-Pick the version from the [releases page](https://github.com/miho-labs/cloudflare-operator/releases).
+Pick the version from the [releases page](https://github.com/Home-Labs-PL/cloudflare-operator/releases).
 Each release also ships `install.yaml`, the chart rendered with default values and CRDs included,
 for `kubectl apply --server-side -f install.yaml` without Helm.
 
@@ -99,7 +99,7 @@ The chart installs the CRDs from its `crds/` directory. Helm does not upgrade CR
 `helm upgrade`; after upgrading the chart apply the new CRDs from the matching release:
 
 ```bash
-helm pull oci://ghcr.io/miho-labs/charts/cloudflare-operator --version <new version> --untar
+helm pull oci://ghcr.io/home-labs-pl/charts/cloudflare-operator --version <new version> --untar
 kubectl apply --server-side -f cloudflare-operator/crds/
 ```
 
