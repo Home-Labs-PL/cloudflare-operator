@@ -26,11 +26,11 @@ same natural key instead of duplicating them, corrects drift on a periodic resyn
 ## Quick start
 
 Releases are published to the GitHub Container Registry: the image as
-`ghcr.io/miho-labs/cloudflare-operator` and the Helm chart as an OCI artifact.
+`ghcr.io/home-labs-pl/cloudflare-operator` and the Helm chart as an OCI artifact.
 
 ```bash
 helm upgrade --install cloudflare-operator \
-  oci://ghcr.io/miho-labs/charts/cloudflare-operator --version 0.1.0 \
+  oci://ghcr.io/home-labs-pl/charts/cloudflare-operator --version 0.4.1 \
   --namespace cloudflare-operator --create-namespace
 ```
 
@@ -112,9 +112,9 @@ rule to the tunnel configuration and creates the proxied CNAME `app.example.com`
 
 | Artifact | Location |
 |----------|----------|
-| Container image (amd64, arm64) | `ghcr.io/miho-labs/cloudflare-operator:<version>`, `:latest`, `:edge` (main) |
-| Helm chart (OCI) | `oci://ghcr.io/miho-labs/charts/cloudflare-operator:<version>` |
-| Rendered manifests | `install.yaml` attached to each [GitHub release](https://github.com/miho-labs/cloudflare-operator/releases) |
+| Container image (amd64, arm64) | `ghcr.io/home-labs-pl/cloudflare-operator:<version>`, `:latest`, `:edge` (main) |
+| Helm chart (OCI) | `oci://ghcr.io/home-labs-pl/charts/cloudflare-operator:<version>` |
+| Rendered manifests | `install.yaml` attached to each [GitHub release](https://github.com/Home-Labs-PL/cloudflare-operator/releases) |
 
 ## Requirements
 

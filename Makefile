@@ -1,8 +1,8 @@
 # Image URL to use for docker build/push
-IMG ?= ghcr.io/miho-labs/cloudflare-operator:dev
+IMG ?= ghcr.io/home-labs-pl/cloudflare-operator:dev
 CHART := charts/cloudflare-operator
 # OCI registry the chart is pushed to by `make helm-push` and the release workflow.
-CHART_REGISTRY ?= oci://ghcr.io/miho-labs/charts
+CHART_REGISTRY ?= oci://ghcr.io/home-labs-pl/charts
 CHART_VERSION ?= $(shell sed -n 's/^version: //p' $(CHART)/Chart.yaml)
 GOFLAGS ?= -mod=mod
 export GOFLAGS

@@ -10,7 +10,7 @@ Docker for images, Helm for the chart. No `kubebuilder` binary is needed: code g
 through `go tool controller-gen`.
 
 ```bash
-git clone https://github.com/miho-labs/cloudflare-operator
+git clone https://github.com/Home-Labs-PL/cloudflare-operator
 cd cloudflare-operator
 make test            # unit tests, no cluster needed
 make verify          # regenerate everything, fail on diff (CI runs this)
@@ -190,9 +190,9 @@ Everything is published to the GitHub Container Registry by `.github/workflows/r
 
 1. Bump `version` and `appVersion` in `charts/cloudflare-operator/Chart.yaml` and merge.
 2. Tag and push: `git tag v0.2.0 && git push origin v0.2.0`.
-3. The workflow builds the multi-arch image `ghcr.io/miho-labs/cloudflare-operator:0.2.0`
+3. The workflow builds the multi-arch image `ghcr.io/home-labs-pl/cloudflare-operator:0.2.0`
    (plus `0.2` and `latest`), packages the chart with that version and pushes it to
-   `oci://ghcr.io/miho-labs/charts/cloudflare-operator`, and creates a GitHub release with the
+   `oci://ghcr.io/home-labs-pl/charts/cloudflare-operator`, and creates a GitHub release with the
    chart archive and a rendered `install.yaml`.
 
 `ci.yaml` additionally pushes `:edge` and `:sha-<commit>` image tags from `main`.

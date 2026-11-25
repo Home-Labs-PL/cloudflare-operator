@@ -5,9 +5,9 @@ type: application
 version: 0.1.0
 appVersion: "0.1.0"
 kubeVersion: ">=1.28.0-0"
-home: https://github.com/miho-labs/cloudflare-operator
+home: https://github.com/Home-Labs-PL/cloudflare-operator
 sources:
-  - https://github.com/miho-labs/cloudflare-operator
+  - https://github.com/Home-Labs-PL/cloudflare-operator
 keywords:
   - cloudflare
   - tunnel
@@ -17,5 +17,5 @@ keywords:
   - dns
   - operator
 maintainers:
-  - name: Miho Labs
-    url: https://github.com/miho-labs
+  - name: Home Labs
+    url: https://github.com/Home-Labs-PL

@@ -24,4 +24,4 @@ Next steps:
      kubectl get cloudflareaccounts
 
 Then create Tunnel, TunnelIngress, DNSRecord, R2Bucket or AccessApplication resources.
-Documentation: https://github.com/miho-labs/cloudflare-operator/tree/main/docs
+Documentation: https://github.com/Home-Labs-PL/cloudflare-operator/tree/main/docs
